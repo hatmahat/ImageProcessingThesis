@@ -11,7 +11,7 @@
 ![img3](3.Gray_Bilateral_Blur.jpg)  
 
 ### 4. Thresholding with no HistEq  
-![img4](4.Thresholding_with_no_HistEq.jpg)  
+![img4](4.Thresholding_with_no_HistEq_2.jpg)  
   
 ## Example results wit  histogram equalization :  
   
@@ -25,4 +25,4 @@
 ![img3.1](3.1.Gray_Bilateral_Blur_with_HistEq.jpg)  
 
 ### 4.1 Thresholding with Histogram Equalization  
-![img4.1](4.1.Thresholding_with_HistEq.jpg)
+![img4.1](4.1.Thresholding_with_HistEq_2.jpg)
