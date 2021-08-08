@@ -19,7 +19,7 @@
 ![img1.1](1.1.Histogram_Equalization.jpg)  
   
 ### 2.1 Bilateral Blur with Histogram Equalization  
-![img2.1](2.1.Bilateral_Blur with_HistEq.jpg)  
+![img2.1](2.1.Bilateral_Blur_with_HistEq.jpg)  
   
 ### 3.1 Gray Bilateral Blur with Histogram Equalization  
 ![img3.1](3.1.Gray_Bilateral_Blur_with_HistEq.jpg)  
