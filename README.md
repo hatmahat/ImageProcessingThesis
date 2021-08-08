@@ -1,5 +1,5 @@
 # Image Processing: Mark 1 
-## example results wit no histogram equalization :
+## Example results wit no histogram equalization :
 
 ### 1. Original Image  
 ![img1](1.Original_Image.jpg)  
@@ -13,7 +13,7 @@
 ### 4. Thresholding with no HistEq  
 ![img4](4.Thresholding_with_no_HistEq.jpg)  
   
-## example results wit  histogram equalization :  
+## Example results wit  histogram equalization :  
   
 ### 1.1 Original Image with Histogram Equalization
 ![img1.1](1.1.Histogram_Equalization.jpg)  
