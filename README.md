@@ -25,4 +25,4 @@
 ![img3.1](3.1.Gray_Bilateral_Blur_with_HistEq.jpg)  
 
 ### 4.1 Thresholding with Histogram Equalization  
-![img4.1](4.1.Thresholding_with_HistEq.jpg) 
+![img4.1](4.1.Thresholding_with_HistEq.jpg)
