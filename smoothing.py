@@ -8,7 +8,7 @@ def rescaleFrame(frame, scale=.2):
 
     return cv.resize(frame, dimensions, interpolation=cv.INTER_AREA)
 
-img = cv.imread("BBBB HistEq.jpg")
+img = cv.imread("LBS HistEq.jpg")
 # img = rescaleFrame(img)
 cv.imshow("IMG", img)
 
@@ -26,12 +26,12 @@ cv.imshow("Median Blur", median)
 
 # Bilateral 
 bilateral = cv.bilateralFilter(img, 25, 75, 75)
-cv.imshow("Bilateral", bilateral)
+cv.imshow("Bilateral HistEq", bilateral)
 
 gray = cv.cvtColor(bilateral, cv.COLOR_BGR2GRAY)
-cv.imshow("gray", gray)
+cv.imshow("gray HistEq", gray)
 
-ret, thresh_inv_hist = cv.threshold(gray, 125, 255, cv.THRESH_BINARY_INV)
+ret, thresh_inv_hist = cv.threshold(gray, 110, 255, cv.THRESH_BINARY_INV)
 cv.imshow("Threshold", thresh_inv_hist)
 
 # di thresholding per RGB? karena beda di green cukup tinggi sama sel darah merah
@@ -42,7 +42,7 @@ cv.imshow("Threshold", thresh_inv_hist)
 # masked = cv.bitwise_and(img, img, mask=cv.bitwise_not(thresh)) # versi lama make bitwise_not tidak mak einvers thresh
 # cv.imshow("Masked", masked)
 
-img_org = cv.imread("BBBB.jpg")
+img_org = cv.imread("LBS.jpg")
 img_org = rescaleFrame(img_org)
 cv.imshow("IMG ORG", img_org)
 
@@ -52,7 +52,7 @@ cv.imshow("Bilateral", bilateral)
 gray = cv.cvtColor(bilateral, cv.COLOR_BGR2GRAY)
 cv.imshow("gray", gray)
 
-ret, thresh_inv = cv.threshold(gray, 125, 255, cv.THRESH_BINARY_INV)
+ret, thresh_inv = cv.threshold(gray, 110, 255, cv.THRESH_BINARY_INV)
 cv.imshow("Threshold", thresh_inv)
 
 masked = cv.bitwise_and(img_org, img_org, mask=thresh_inv)
