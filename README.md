@@ -1,2 +1,2 @@
-# Image Processing - Mark 1 - example results:
+# Mark 1: Image Processing - example results:
 
