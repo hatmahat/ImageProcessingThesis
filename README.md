@@ -2,6 +2,6 @@
 ## example results:
 
 ### 1. Original Image  
-![workflow](1. Original Image.jpg)  
+![workflow](1.Original_Image.jpg)  
 
 
