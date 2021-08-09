@@ -2,7 +2,7 @@
 ## A. Example results with no histogram equalization :
 
 ### 1. Original Image  
-![img1](.\img-mk-1\1.Original_Image.jpg)  
+![img1](img-mk-1\1.Original_Image.jpg)  
   
 ### 2. Bilateral Blur  
 ![img2](2.Bilateral_Blur.jpg)  
