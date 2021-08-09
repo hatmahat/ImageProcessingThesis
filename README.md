@@ -28,6 +28,7 @@
 ![img4.1](/img-mk-1/4.1.Thresholding_with_HistEq_2.jpg)  
   
 # Image Processing: Mark 2  
-## A. Example results with no histogram equalization (Mark 1 already have good results for white blood cells nucleus egmentation):  
-
+## A. Example results with no histogram equalization :  
+(skipped this part, Mark 1 already have good results for white blood cells nucleus egmentation)  
+  
 ## B. Example results with  histogram equalization (Green Thresholding) : 
