@@ -13,7 +13,7 @@
 ### 4. Final output: Thresholding with no Histogram Equalization   
 ![img4](/img-mk-1/4.Thresholding_with_no_HistEq_2.jpg)  
   
-## B. Example results with  histogram equalization :  
+## B. Example results with  histogram equalization (Gray Thresholding) :  
   
 ### 1.1 Original Image with Histogram Equalization
 ![img1.1](/img-mk-1/1.1.Histogram_Equalization.jpg)  
