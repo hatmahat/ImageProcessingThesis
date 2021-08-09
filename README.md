@@ -25,4 +25,9 @@
 ![img3.1](/img-mk-1/3.1.Gray_Bilateral_Blur_with_HistEq.jpg)  
 
 ### 4.1 Final output: Thresholding with Histogram Equalization  
-![img4.1](/img-mk-1/4.1.Thresholding_with_HistEq_2.jpg)
+![img4.1](/img-mk-1/4.1.Thresholding_with_HistEq_2.jpg)  
+  
+# Image Processing: Mark 2  
+## A. Example results with no histogram equalization (Mark 1 already have good results for white blood cells nucleus egmentation):  
+
+## B. Example results with  histogram equalization (Green Thresholding) : 
