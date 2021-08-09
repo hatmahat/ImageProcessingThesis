@@ -29,18 +29,18 @@
   
 # Image Processing: Mark 2  
 ## A. Example results with no histogram equalization :  
-(skipped this part, Mark 1 had already good results for white blood cells nucleus segmentations)  
+(skip this part, Mark 1 had already good results for white blood cells nucleus segmentations)  
   
 ## B. Example results with  histogram equalization (Green Thresholding) :  
   
-### 1.1 Original Image with Histogram Equalization
+### 1.2 Original Image with Histogram Equalization
 ![img1.1](/img-mk-2/1.1.Histogram_Equalization.jpg)  
   
-### 2.1 Bilateral Blur with Histogram Equalization  
+### 2.2 Bilateral Blur with Histogram Equalization  
 ![img2.1](/img-mk-2/2.1.Bilateral_Blur_with_HistEq.jpg)  
   
-### 3.1 Gray Bilateral Blur with Histogram Equalization  
+### 3.2 Gray Bilateral Blur with Histogram Equalization  
 ![img3.1](/img-mk-2/3.1.Green_Bilateral_Blur_with_HistEq.jpg)  
 
-### 4.1 Final output: Thresholding with Histogram Equalization (Better) 
+### 4.2 Final output: Thresholding with Histogram Equalization (Better) 
 ![img4.1](/img-mk-2/4.1.Thresholding_with_HistEq_2.jpg)  
