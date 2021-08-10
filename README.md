@@ -39,7 +39,7 @@
 ### 2.2 Bilateral Blur with Histogram Equalization  
 ![img2.1](/img-mk-2/2.1.Bilateral_Blur_with_HistEq.jpg)  
   
-### 3.2 Gray Bilateral Blur with Histogram Equalization  
+### 3.2 Green Bilateral Blur with Histogram Equalization  
 ![img3.1](/img-mk-2/3.1.Green_Bilateral_Blur_with_HistEq.jpg)  
 
 ### 4.2 [Better] Final output: Thresholding with Histogram Equalization (partially segmentation of white blood cells) 
