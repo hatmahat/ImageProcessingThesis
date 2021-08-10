@@ -24,7 +24,7 @@
 ### 3.1 Gray Bilateral Blur with Histogram Equalization  
 ![img3.1](/img-mk-1/3.1.Gray_Bilateral_Blur_with_HistEq.jpg)  
 
-### 4.1 Final output: Thresholding with Histogram Equalization  
+### 4.1 Final output: Thresholding with Histogram Equalization (partially segmentation of white blood cells)  
 ![img4.1](/img-mk-1/4.1.Thresholding_with_HistEq_2.jpg)  
   
 # Image Processing: Mark 2  
@@ -42,5 +42,5 @@
 ### 3.2 Gray Bilateral Blur with Histogram Equalization  
 ![img3.1](/img-mk-2/3.1.Green_Bilateral_Blur_with_HistEq.jpg)  
 
-### 4.2 Final output: Thresholding with Histogram Equalization (Better) 
+### 4.2 [Better] Final output: Thresholding with Histogram Equalization (partially segmentation of white blood cells) 
 ![img4.1](/img-mk-2/4.1.Thresholding_with_HistEq_2.jpg)  
