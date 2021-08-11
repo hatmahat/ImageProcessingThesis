@@ -1,4 +1,5 @@
 <h1 align="center">Image Processing: Mark 1</h1>  
+  
 ## A. Example results with no histogram equalization :
 
 ### 1. Original Image  
@@ -28,6 +29,7 @@
 ![img4.1](/img-mk-1/4.1.Thresholding_with_HistEq_2.jpg)  
   
 <h1 align="center">Image Processing: Mark 2</h1>  
+  
 ## A. Example results with no histogram equalization :  
 (skip this part, Mark 1 already have good results for white blood cells nucleus segmentations)  
   
