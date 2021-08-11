@@ -29,7 +29,7 @@
   
 # Image Processing: Mark 2  
 ## A. Example results with no histogram equalization :  
-(skip this part, Mark 1 had already good results for white blood cells nucleus segmentations)  
+(skip this part, Mark 1 already have good results for white blood cells nucleus segmentations)  
   
 ## B. Example results with  histogram equalization (Green Thresholding) :  
   
