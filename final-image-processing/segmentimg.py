@@ -66,7 +66,7 @@ class segmentImg:
         """
         self.img_names = [img_name for img_name in os.listdir(self.child)]
         self.img_dict = {
-            img_name.replace(".jpg", ""):cv.imread(self.child+f"\\{img_name}") for img_name in self.img_names
+            img_name:cv.imread(self.child+f"\\{img_name}") for img_name in self.img_names
             }
 
     def save(self, saved_folder, addition_name, read_dict):
@@ -89,7 +89,7 @@ class segmentImg:
         print("Back to ROOT_DIR")
         print("Everything is OK.")
 
-    def rescale_all(self, scale=0.2): # belum ada count
+    def rescale_all(self, scale=0.2):
         """Rescale all images in self.img_dict
 
         Parameters
@@ -102,14 +102,10 @@ class segmentImg:
             height = int(frame.shape[0]*scale)
             dimensions = (width, height)
             return cv.resize(frame, dimensions, interpolation=cv.INTER_AREA)
-        
-        count = 1
-        dict_len = len(self.img_dict.items())
+
         for img_name, img in self.img_dict.items(): # karena ada ".jpg" di nama makannya -4
-            #img_name = img_name.replace(".jpg", "")
+            img_name = img_name.replace(".jpg", "")
             self.img_dict_rescaled[img_name] = rescale(img, scale)
-            print(f'Rescale Processed: {count}/{dict_len}')
-            count += 1
 
     def save_rescaled_all(self, saved_folder):
         """Save images from img_dict_rescaled to the "saved_folder" folder.
@@ -132,13 +128,12 @@ class segmentImg:
         """
         def hist_equal(read_dict):
             count = 1
-            dict_len = len(read_dict.items())
             for img_name, img in read_dict.items():
-                #img_name = img_name.replace(".jpg", "")
+                img_name = img_name.replace(".jpg", "")
                 self.img_hist_eq_dict[img_name] = cv.cvtColor(img, cv.COLOR_BGR2YUV)
                 self.img_hist_eq_dict[img_name][:,:,0] = cv.equalizeHist(self.img_hist_eq_dict[img_name][:,:,0])
                 self.img_hist_eq_dict[img_name] = cv.cvtColor(self.img_hist_eq_dict[img_name], cv.COLOR_YUV2BGR)
-                print(f'Hist Equal Processed: {count}/{dict_len}')
+                print(f'Hist Equal Processed: {count}/{len(read_dict.items())}')
                 count += 1
 
         if on == 'rescaled_dict':
@@ -172,10 +167,9 @@ class segmentImg:
         """
         def bilateralFilter(read_dict):
             count = 1
-            dict_len = len(read_dict.items())
             for img_name, img in read_dict.items():
                 self.img_bilateral_dict[img_name] = cv.bilateralFilter(img, 25, 75, 75) #cv.bilateralFilter(img, 10, 50, 50)
-                print(f'Bilateral Filter Processed: {count}/{dict_len}')
+                print(f'Bilateral Filter Processed: {count}/{len(read_dict.items())}')
                 count += 1
 
         if on == 'hist_equal_dict':
@@ -210,12 +204,11 @@ class segmentImg:
         """
         def thresh_green_chan(read_dict):
             count = 1
-            dict_len = len(read_dict.items())
             for img_name, img in read_dict.items():
                 b, g, r = cv.split(img)
                 ret, thresh_inv_green = cv.threshold(g, 100, 255, cv.THRESH_BINARY_INV)
                 self.thresh_inv_green[img_name] = thresh_inv_green
-                print(f'Green Thresh Processed: {count}/{dict_len}')
+                print(f'Green Thresh Processed: {count}/{len(read_dict.items())}')
                 count += 1
 
         if on == 'hist_equal_dict':
@@ -252,12 +245,11 @@ class segmentImg:
         """
         def gray(read_dict):
             count = 1
-            dict_len = len(read_dict.items())
             for img_name, img in read_dict.items():
                 gray = cv.cvtColor(img, cv.COLOR_BGR2GRAY)
                 ret, thresh_inv_gray = cv.threshold(gray, 110, 255, cv.THRESH_BINARY_INV)
                 self.thresh_inv_gray[img_name] = thresh_inv_gray
-                print(f'Gray Thresh Processed: {count}/{dict_len}')
+                print(f'Gray Thresh Processed: {count}/{len(read_dict.items())}')
                 count += 1
 
         if on == 'hist_equal_dict':
@@ -281,7 +273,7 @@ class segmentImg:
         """
         self.save(saved_folder, "(thresh gray)", self.thresh_inv_gray)
 
-    def masked_all(self, on='thresh_inv_green', mask='org_dict'): # perbaiki masik make rescaled dict
+    def masked_all(self, on='thresh_inv_green'):
         """Masking Thresholded imag to original image.
         
         Parameters
@@ -293,28 +285,20 @@ class segmentImg:
             'bilateral_dict' iterate over self.img_bilateral_dict
             'thresh_inv_green' iterate over self.thresh_inv_green
         """
-        def masked(read_dict, mask_dict):
+        def masked(read_dict):
             count = 1
-            dict_len = len(read_dict.items())
             for img_name, img in read_dict.items():
                 masked_hist = cv.bitwise_and(
-                    mask_dict[img_name], mask_dict[img_name], mask=img
+                    self.img_dict_rescaled[img_name], self.img_dict_rescaled[img_name], mask=img
                     )
                 self.img_masked[img_name] = masked_hist
-                print(f'Masked Processed: {count}/{dict_len}')
+                print(f'Masked Processed: {count}/{len(read_dict.items())}')
                 count += 1
 
-        if mask == 'org_dict':
-            mask = self.img_dict
-        elif mask == 'rescaled_dict':
-            mask = self.img_dict_rescaled
-        else:
-            raise ValueError('The argument is not defined!')
-
         if on == 'thresh_inv_green':
-            masked(self.thresh_inv_green, mask)
+            masked(self.thresh_inv_green)
         elif on == 'thresh_inv_gray':
-            masked(self.thresh_inv_gray, mask)
+            masked(self.thresh_inv_gray)
         else:
             raise ValueError('The argument is not defined!')
 
