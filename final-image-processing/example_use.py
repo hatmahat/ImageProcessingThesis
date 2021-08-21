@@ -1,6 +1,6 @@
 import segmentimg as simg
 
-# Example use if segmentimg
+# Example use of segmentimg
 def with_sito():
     print("---- WITH SITO RUNNING ----")
     img.hist_equal_all(on='org_dict')
