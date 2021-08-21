@@ -111,7 +111,7 @@ class segmentImg:
             print(f'Rescale Processed: {count}/{dict_len}')
             count += 1
 
-    def save_rescaled_all(self, saved_folder):
+    def save_rescaled_all(self, saved_folder, addition_name='(rescaled)'):
         """Save images from img_dict_rescaled to the "saved_folder" folder.
 
         Parameters
@@ -119,7 +119,7 @@ class segmentImg:
         saved_folder : str
                        Name of the new folder where images will be saved.
         """
-        self.save(saved_folder, "(rescaled)", self.img_dict_rescaled)
+        self.save(saved_folder, f'{addition_name}', self.img_dict_rescaled)
 
     def hist_equal_all(self, on='rescaled_dict'):
         """Histogram equalization.
@@ -150,7 +150,7 @@ class segmentImg:
         else:
             raise ValueError('The argument is not defined!')
 
-    def save_hist_equal_all(self, saved_folder):
+    def save_hist_equal_all(self, saved_folder, addition_name='(hist equal)'):
         """Save images from img_hist_eq_dict to the "saved_folder" folder.
 
         Parameters
@@ -158,7 +158,7 @@ class segmentImg:
         saved_folder : str
                        Name of the new folder where images will be saved.
         """
-        self.save(saved_folder, "(hist equal)", self.img_hist_eq_dict)
+        self.save(saved_folder, f'{addition_name}', self.img_hist_eq_dict)
 
     def bilateral_all(self, on='org_dict'):
         """Histogram equalization.
@@ -187,7 +187,7 @@ class segmentImg:
         else:
             raise ValueError('The argument is not defined!')
 
-    def save_bilateral_all(self, saved_folder):
+    def save_bilateral_all(self, saved_folder, addition_name='(bilateral blur)'):
         """Save images from img_bilateral_dict to the "saved_folder" folder.
 
         Parameters
@@ -195,7 +195,7 @@ class segmentImg:
         saved_folder : str
                        Name of the new folder where images will be saved.
         """
-        self.save(saved_folder, "(bilateral blur)", self.img_bilateral_dict)
+        self.save(saved_folder, f'{addition_name}', self.img_bilateral_dict)
 
     def thresh_green_chan_all(self, on='org_dict'):
         """Thresholding on the Green Channel.
@@ -229,7 +229,7 @@ class segmentImg:
         else:
             raise ValueError('The argument is not defined!')
 
-    def save_thresh_green_chan_all(self, saved_folder):
+    def save_thresh_green_chan_all(self, saved_folder, addition_name='(thresh green)'):
         """Save images from thresh_inv_green to the "saved_folder" folder.
 
         Parameters
@@ -237,7 +237,7 @@ class segmentImg:
         saved_folder : str
                        Name of the new folder where images will be saved.
         """
-        self.save(saved_folder, "(thresh green)", self.thresh_inv_green)
+        self.save(saved_folder, f'{addition_name}', self.thresh_inv_green)
 
     def thresh_gray_all(self, on='org_dict'):
         """Thresholding on the Gray.
@@ -271,7 +271,7 @@ class segmentImg:
         else:
             raise ValueError('The argument is no defined!')
 
-    def save_thresh_gray(self, saved_folder):
+    def save_thresh_gray(self, saved_folder, addition_name='(thresh gray)'):
         """Save images from thresh_inv_gray to the "saved_folder" folder.
 
         Parameters
@@ -279,7 +279,7 @@ class segmentImg:
         saved_folder : str
                        Name of the new folder where images will be saved.
         """
-        self.save(saved_folder, "(thresh gray)", self.thresh_inv_gray)
+        self.save(saved_folder, f'{addition_name}', self.thresh_inv_gray)
 
     def masked_all(self, on='thresh_inv_green', mask='org_dict'): # perbaiki masik make rescaled dict
         """Masking Thresholded imag to original image.
@@ -318,7 +318,7 @@ class segmentImg:
         else:
             raise ValueError('The argument is not defined!')
 
-    def save_masked_all(self, saved_folder):
+    def save_masked_all(self, saved_folder, addition_name='(masked)'):
         """Save images from img_masked to the "saved_folder" folder.
 
         Parameters
@@ -326,4 +326,4 @@ class segmentImg:
         saved_folder : str
                        Name of the new folder where images will be saved.
         """
-        self.save(saved_folder, "(masked)", self.img_masked)
+        self.save(saved_folder, f'{addition_name}', self.img_masked)
