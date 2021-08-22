@@ -1,6 +1,7 @@
 import cv2 as cv
 import os
 
+# fitur tambahan untuk kedapan --> batch_size (in case resolusi tinggi)
 class segmentImg:
     """Image segmentation for Acute Lymphoblastic Leukemia L1
        coded by Mahatma Wisesa
@@ -15,11 +16,11 @@ class segmentImg:
     def __init__(self, ROOT_DIR, child):
         self.ROOT_DIR = ROOT_DIR
         self.child = self.ROOT_DIR+f"\\{child}"
-        self.img_names = [] # nama file yg ada di folder
+        self.img_names = [] # nama gambar yg ada di folder
         
-        self.img_dict = {} # masih ada ".jpg" --> gambar original
-        self.img_dict_rescaled = {} # rescaled img
-        self.img_hist_eq_dict = {} # histogram equalization img
+        self.img_dict = {} # nama gambar sama arraynya
+        self.img_dict_rescaled = {} 
+        self.img_hist_eq_dict = {} 
         self.img_bilateral_dict = {}
         self.thresh_inv_green = {}
         self.img_masked = {}
@@ -86,7 +87,7 @@ class segmentImg:
             cv.imwrite(f"{img_name} {addition_name}.jpg", img)
         print("Image saved.")
         os.chdir(self.ROOT_DIR)
-        print("Back to ROOT_DIR")
+        #print("Back to ROOT_DIR")
         print("Everything is OK.")
 
     def rescale_all(self, scale=0.2): # belum ada count
