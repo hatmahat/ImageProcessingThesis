@@ -1,7 +1,7 @@
 import cv2 as cv
 import os
 
-# fitur tambahan untuk kedapan --> batch_size (in case resolusi tinggi)
+# fitur tambahan untuk kerjaan ke depan --> batch_size (in case resolusi tinggi)
 class segmentImg:
     """Image segmentation for Acute Lymphoblastic Leukemia L1
        coded by Mahatma Wisesa
