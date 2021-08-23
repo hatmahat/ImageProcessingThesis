@@ -66,6 +66,8 @@ class segmentImg:
         """Create dictionary of images.
         """
         self.img_names = [img_name for img_name in os.listdir(self.child)]
+        if len(self.img_names) == 0:
+            raise IndexError("Folder is empty brother!")
         self.img_dict = {
             img_name.replace(".jpg", ""):cv.imread(self.child+f"\\{img_name}") for img_name in self.img_names
             }
