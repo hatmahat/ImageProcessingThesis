@@ -20,7 +20,6 @@ def mkdir(ROOT_DIR, DIR):
 
 @use_rescale
 def with_cyto(use_rescale=False):
-
     dirr = r"\processed\histeq (with cyto)"
     mkdir(ROOT_DIR, dirr)
     img.hist_equal_all(on=base_dict)
