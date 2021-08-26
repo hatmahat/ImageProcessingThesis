@@ -85,7 +85,7 @@ class segmentImg:
         read_dict : dict, {"IMG_NAME": <class 'numpy.ndarray'>}
                     Dictionary to be saved as images
         """
-        os.chdir(self.ROOT_DIR+f"\\{saved_folder}")
+        os.chdir(self.ROOT_DIR+f"\{saved_folder}")
         for img_name, img in read_dict.items():
             cv.imwrite(f"{img_name} {addition_name}.jpg", img)
         print("Image saved.")
