@@ -37,18 +37,17 @@ class countTypes:
         ]
 
     def count_cells(self):
-        # hapus bracket dan perspasi displit
         self.preprocessed = [
-            re.sub("[\(\[].*?[\)\]]", "", file_name).split(" ")[1:] for file_name in self.file_names if len(file_name) > 1
+            re.sub("[\(\[].*?[\)\]]", "", file_name).split(" ")[1:] for file_name in self.file_names if len(file_name.split(' ')) > 1
         ]
         # ubah dari list 2d ke 1 d
         for cells in self.preprocessed:
             for cell in cells:
                 if cell != '':
                     self.preprocessed_1D.append(cell)
-        uniqs = np.unique(np.array(self.preprocessed_1D))
-
+        
         # buat keys untuk dict setiap nama uniq
+        uniqs = np.unique(np.array(self.preprocessed_1D))
         for uniq_name in uniqs:
             self.uniq_dict[uniq_name] = 0
 
