@@ -122,6 +122,8 @@ class segmentImg:
         ------------
         saved_folder : str
                        Name of the new folder where images will be saved.
+        addition_name : str
+                        Additional name for file name.
         """
         self.save(saved_folder, f'{addition_name}', self.img_dict_rescaled)
 
@@ -130,9 +132,9 @@ class segmentImg:
         
         Parameters
         ------------
-        rescale : bool
-                  If true use self.img_dict_rescaled, else use self.img_dict 
-                  original image stil need update.
+        on  : str            
+              'rescaled_dict' iterate over self.img_dict_rescaled
+              'org_dict' iterate over self.img_dict
         """
         def hist_equal(read_dict):
             count = 1
@@ -161,6 +163,8 @@ class segmentImg:
         ------------
         saved_folder : str
                        Name of the new folder where images will be saved.
+        addition_name : str
+                        Additional name for file name.
         """
         self.save(saved_folder, f'{addition_name}', self.img_hist_eq_dict)
 
@@ -198,6 +202,8 @@ class segmentImg:
         ------------
         saved_folder : str
                        Name of the new folder where images will be saved.
+        addition_name : str
+                        Additional name for file name.
         """
         self.save(saved_folder, f'{addition_name}', self.img_bilateral_dict)
 
@@ -240,6 +246,8 @@ class segmentImg:
         ------------
         saved_folder : str
                        Name of the new folder where images will be saved.
+        addition_name : str
+                        Additional name for file name.
         """
         self.save(saved_folder, f'{addition_name}', self.thresh_inv_green)
 
@@ -282,6 +290,8 @@ class segmentImg:
         ------------
         saved_folder : str
                        Name of the new folder where images will be saved.
+        addition_name : str
+                        Additional name for file name.
         """
         self.save(saved_folder, f'{addition_name}', self.thresh_inv_gray)
 
@@ -296,6 +306,9 @@ class segmentImg:
             'org_dict' iterate over self.img_dict
             'bilateral_dict' iterate over self.img_bilateral_dict
             'thresh_inv_green' iterate over self.thresh_inv_green
+        mask : str
+               'org_dict' mask on self.img_dict
+               'rescaled_dict' mask on self.img_dict_rescaled
         """
         def masked(read_dict, mask_dict):
             count = 1
@@ -329,5 +342,7 @@ class segmentImg:
         ------------
         saved_folder : str
                        Name of the new folder where images will be saved.
+        addition_name : str
+                        Additional name for file name.
         """
         self.save(saved_folder, f'{addition_name}', self.img_masked)

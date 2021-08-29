@@ -68,10 +68,10 @@ def main():
     print("accessing...")
     img.read_all_img()
 
-    dirr = r"\processed\rescale"
+    dirr = r"\processed\.rescale"
     mkdir(ROOT_DIR, dirr)
     img.rescale_all()
-    img.save_rescaled_all(r"\processed\rescale")
+    img.save_rescaled_all(dirr)
 
     with_cyto(use_rescale=True) # with cytoplasm
     with_no_cyto(use_rescale=True) # with no cytoplasm, only nucleus
