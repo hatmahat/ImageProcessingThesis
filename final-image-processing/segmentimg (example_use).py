@@ -64,10 +64,10 @@ def main():
     ROOT_DIR = r"D:\White Blood Cells  RSUP Sardjito - Copy\working data"
     DATASET_DIR = "sampel sampel"
     
-    img = simg.segmentImg(ROOT_DIR, DATASET_DIR)
+    img = simg.SegmentImg(ROOT_DIR, DATASET_DIR)
     print("accessing...")
     img.read_all_img()
-
+    
     dirr = r"\processed\.rescale"
     mkdir(ROOT_DIR, dirr)
     img.rescale_all()
