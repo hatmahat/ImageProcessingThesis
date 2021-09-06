@@ -3,7 +3,7 @@ import os
 
 # fitur tambahan untuk kerjaan ke depan --> batch_size (in case resolusi tinggi)
 # docstrings are not updated yet
-class segmentImg:
+class SegmentImg:
     """Image segmentation for Acute Lymphoblastic Leukemia L1
        coded by Mahatma Wisesa
 
